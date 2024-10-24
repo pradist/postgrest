@@ -7,11 +7,27 @@ services:
     ports:
       - "5432:5432"
     env_file:
-      - ./db.env
+      - ./env/db.env
     environment:
       PGDATA: /var/lib/postgresql/data/pgdata
     volumes:
       - db-data:/var/lib/postgresql/data/pgdata
+  
+  pgadmin:
+    container_name: pgadmin4_container
+    image: dpage/pgadmin4
+    restart: always
+    env_file:
+      - ./env/pgadmin.env
+    environment:
+        PGADMIN_LISTEN_PORT: 80
+    ports:
+        - "5050:80"
+    links:
+        - "db:pgsql-server"
+    volumes:
+        - pgadmin-data:/var/lib/pgadmin
 
 volumes:
     db-data:
+    pgadmin-data:
