@@ -1,5 +1,8 @@
 env/db.env
 env/pgadmin.env
 
+.env
+
 postgrest-v12.0.2-macos-x64.tar.xz
 tutorial.conf
+# Ignore all .env files
