@@ -11,3 +11,6 @@ create table todos (
 -- Grant access to anon
 grant usage on schema public to anon;
 grant select, insert, update, delete on todos to anon;
+
+-- Grant access to sequence created by serial
+grant usage, select on sequence todos_id_seq to anon;
