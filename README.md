@@ -54,10 +54,14 @@ podman-compose down
 
 ## Example API Test
 
-```
+```sh
 curl http://localhost:3000/todos
 
 curl -X POST http://localhost:3000/todos \
   -H "Content-Type: application/json" \
+  -H "Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoic3RhZmYiLCJpYXQiOjE3NDY0NDgzNzh9.66japhXYnJS7F7YK93BXCWgKML7kYl-lVgvs81aRQIc" \
   -d '{"task": "Trying out PostgREST"}'
+
+curl http://localhost:3000/todos \
+  -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoic3RhZmYiLCJpYXQiOjE3NDY0NDgzNzh9.66japhXYnJS7F7YK93BXCWgKML7kYl-lVgvs81aRQIc"
 ```

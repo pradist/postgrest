@@ -1,1 +1,10 @@
 .env
+
+init.sql
+sign-jwt.js
+test.http
+
+node_modules
+
+package-lock.json
+package.json
