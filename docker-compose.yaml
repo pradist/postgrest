@@ -25,6 +25,7 @@ services:
       PGRST_DB_ANON_ROLE: anon
       PGRST_DB_SCHEMA: public
       PGRST_SERVER_PORT: 3000
+      PGRST_JWT_SECRET: ${PGRST_JWT_SECRET}
 
   pgadmin:
     container_name: pgadmin4_container

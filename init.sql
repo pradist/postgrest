@@ -14,3 +14,6 @@ grant select, insert, update, delete on todos to anon;
 
 -- Grant access to sequence created by serial
 grant usage, select on sequence todos_id_seq to anon;
+
+create role staff nologin;
+grant select, insert, update on todos to staff;
